@@ -1,0 +1,15 @@
+{
+  "name": "ev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "nodejs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mahmud Sabuj",
+  "license": "ISC",
+  "dependencies": {
+    "express": "3.x.x",
+    "formidable": "1.x.x"
+  }
+}

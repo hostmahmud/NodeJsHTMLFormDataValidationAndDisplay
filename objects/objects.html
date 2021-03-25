@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>objects, namespace etc</title>
+</head>
+<body>
+	<div id="output"></div>
+	<!--namespace example-->
+	<script type="text/javascript">
+		var jsNamespace = {
+		    first: function() {
+		    	alert("Namespace: This is first example of namespace");
+		    },
+		    second: function() {
+		    	alert("Namespace: This is second example of namespace");
+		    }
+		};
+		jsNamespace.first();
+		jsNamespace.second();
+	</script>
+
+	<!--JS Object : Factory pattern-->
+	<script type="text/javascript">
+		const factoryPattern = (brand, price, qty) => {
+		  const canRun = () => console.log("Factory pattern: "+'I can run!');
+		  return { brand, price, qty, canRun };
+		};
+
+		const bike = factoryPattern('Hero', 50000, 20);
+
+		console.log("Factory pattern: "+bike.brand,bike.price,bike.qty); // bike
+
+		bike.canRun(); // call the function and log.
+	</script>
+
+	<!--JS Object : create class-->
+	<script type="text/javascript">
+		class Bike {
+		  constructor(brand, buildYear) {
+		    this.brand = brand;
+		    this.buildYear = buildYear;
+		  }
+		}
+
+		newBike = new Bike("Hero", 2021);
+		document.write("Class: "+newBike.brand + " " + newBike.buildYear);
+	</script>
+
+	<!--leteral notation-->
+	<script type="text/javascript">
+		var bike2=
+		 {
+			brand:'Hero',
+			buildYear:2021,
+			getBikeInfo:function(){
+				return "Brnad: "+this.brand+', Build year: '+this.buildYear;
+			}
+		 }
+		 console.log("leteral notation: "+bike2.getBikeInfo());
+	</script>
+
+	<!--Prototype-->
+	<script type="text/javascript">
+		function Bike3(brand, buildYear){
+			this.brand=brand;
+			this.buildYear=buildYear;
+		 }
+		 Bike3.prototype.getBikeInfo=function(){
+			return this.brand+': '+this.buildYear;
+		 }
+		 var newBike3=new Bike3('Hero honda','2031');
+		 console.log("Prototype: "+newBike3.getBikeInfo());
+	</script>
+
+	<!--object-->
+	<script type="text/javascript">
+     function displayMessage(msg){
+		document.getElementById("output")
+				.innerHTML+=msg;
+	 }
+	 var bike4=bike4||{};
+	 bike4.brand=function(name, location){
+		this.name=name;
+		this.location=location;
+		this.getBrandInfo=function(){
+			return this.name+" : "+this.location;
+		}
+	 }
+	 var b=new bike4.brand('Discover','Dhaka, Bangladesh');
+	 displayMessage("Object: "+b.getBrandInfo());
+	 
+    </script>
+
+</body>
+</html>
